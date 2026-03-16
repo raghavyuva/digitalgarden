@@ -44,6 +44,7 @@ author:
 
 openGraph:
   type: "website"
+  image: "/opengraph-image"
   locale: "en_US"
 
 twitter:

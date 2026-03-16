@@ -21,29 +21,31 @@ export default function Home() {
       />
 
       {/* Identity */}
-      <article className="animate-fade-in space-y-4">
-        <div className="flex items-center gap-4">
+      <article className="animate-fade-in">
+        <div className="flex items-start gap-4">
           <img
             src="/images/raghavyuva-avatar.jpg"
             alt="Raghavendra Bhat"
             width={64}
             height={64}
-            className="rounded-full"
-            style={{ border: '2px solid var(--color-border)' }}
+            className="rounded-full shrink-0"
+            style={{ border: '2px solid var(--color-border)', marginTop: '2px' }}
           />
-          <h1 className="text-sm mb-0">Raghavendra Bhat</h1>
+          <div className="space-y-2">
+            <h1 className="text-sm mb-0">Raghavendra Bhat</h1>
+            <p className="text-xxs" style={{ color: 'var(--color-muted-foreground)' }}>
+              Senior AI Engineer. Vibe Engineer. Open-source builder. Creator of{' '}
+              <a href="https://nixopus.com" target="_blank" rel="noopener noreferrer">Nixopus</a>{' '}
+              and{' '}
+              <a href="https://github.com/raghavyuva/LucaMail" target="_blank" rel="noopener noreferrer">LucaMail</a>.
+            </p>
+            <p style={{ color: 'var(--color-muted-foreground)' }}>
+              I build infrastructure tools that let developers deploy like Vercel while owning their servers.
+              Nixopus has grown to 1300+ stars and 500+ beta users — entirely open-source, zero lock-in.
+              I write Go and Next.js by day, think about self-hosting and clean abstractions at night.
+            </p>
+          </div>
         </div>
-        <p className="text-xxs" style={{ color: 'var(--color-muted-foreground)' }}>
-          Senior AI Engineer. Vibe Engineer. Open-source builder. Creator of{' '}
-          <a href="https://nixopus.com" target="_blank" rel="noopener noreferrer">Nixopus</a>{' '}
-          and{' '}
-          <a href="https://github.com/raghavyuva/LucaMail" target="_blank" rel="noopener noreferrer">LucaMail</a>.
-        </p>
-        <p style={{ color: 'var(--color-muted-foreground)' }}>
-          I build infrastructure tools that let developers deploy like Vercel while owning their servers.
-          Nixopus has grown to 1300+ stars and 500+ beta users — entirely open-source, zero lock-in.
-          I write Go and Next.js by day, think about self-hosting and clean abstractions at night.
-        </p>
       </article>
 
       {/* Now */}
