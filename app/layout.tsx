@@ -184,7 +184,7 @@ export default function RootLayout({
               <div className="max-w-2xl mx-auto px-4 sm:px-8 py-6 sm:py-8">
                 <div className="flex flex-col items-center gap-4">
                   <p className="text-xs" style={{ color: 'var(--color-muted-foreground)', fontSize: '0.65rem' }}>
-                    © 2024 • raghavyuva
+                    © 2026 • raghavyuva
                   </p>
                   <div className="flex items-center gap-4">
                     {socialLinks.github && (
