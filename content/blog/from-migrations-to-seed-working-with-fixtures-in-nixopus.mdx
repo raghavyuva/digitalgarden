@@ -1,0 +1,165 @@
+---
+title: "From Migrations to Seed: Working with Fixtures in Nixopus"
+date: "2025-06-29"
+description: "Exploring how we handle database migrations and seed data using fixtures in Nixopus."
+tags:
+  - "go"
+  - "beginners"
+  - "tutorial"
+  - "api"
+---
+
+Hey, we’re always up for exploring something cool at [Nixopus](https://github.com/raghavyuva/nixopus), and this time, we’re diving into fixtures. Now, the word **fixtures** might sound a bit too technical and not immediately clear to many of our fellow developers so let’s break it down, and you’ll see exactly what we mean. Let’s dive in.
+
+## The Breakdown
+
+If you’ve worked with migrations before, you’ve probably come across the term *data seeding* for databases. Even if you haven’t, let’s take a moment to understand what seeding data actually involves.
+
+By the way, if you’re not familiar with migrations yet, you might want to check out this article to see how we handle them: [Inside Nixopus: How We Manage Our Database Migrations](https://dev.to/zhravan/inside-nixopus-how-we-manage-our-database-migrations-3i34).
+
+Usually, during development, things can get tricky over time, especially when you have contributors and developers working together on the same project. Everyone wants everything to be quick and hassle-free so development doesn’t slow down. As a project maintainer, it’s your responsibility to enable this smooth contribution roadmap for any user who wants to help out. That’s exactly what we’re working towards at Nixopus.
+
+
+![Data Seeding Life Cycle](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/pr4z630lbeyrl8ljyqif.png)
+
+One major part of [Contributing to Nixopus](https://docs.nixopus.com/contributing) is that after getting everything set up, Contributor still needs to do the following tasks :
+
+1. You realize you need **an admin user** to log in and test admin features.
+2. You also want to create **a member user** for that organization to test the role based access.
+3. You might even want to enable specific features inside nixopus, and disable some!
+ 
+ This is time consuming and error-prone, especially when you or your teammates need to do it over and over again on fresh databases. That’s exactly where data seeding comes into the picture.
+## What is Data Seeding?
+
+*The process of populating a database with an initial set of data.* Simple, isn’t it?
+
+But how do we actually create one in Go using Bun ORM? This is what pushes us to explore how we can write a script to do exactly that.
+## How Do Seed Files Look?
+
+We’ve divided our seed files into a modular folder structure. This way, everything stays organized and it’s much easier to load schema specific data when you need it. 
+
+Below is an example of the file structure and the kind of data we’ll be loading into the database later in our [Codebase](https://github.com/raghavyuva/nixopus/blob/master/api/internal/fixtures/loader/fixture_loader.go):
+
+```yaml
+- model: Role
+
+ rows:
+ - _id: admin
+ id: "{{ uuid }}"
+ name: "admin"
+ description: "Administrator with full access"
+ created_at: "{{ now }}"
+ updated_at: "{{ now }}"
+
+ - _id: member
+ id: "{{ uuid }}"
+ name: "member"
+ description: "Regular organization member"
+ created_at: "{{ now }}"
+ updated_at: "{{ now }}"
+
+ - _id: viewer
+ id: "{{ uuid }}"
+ name: "viewer"
+ description: "Read-only access to resources"
+ created_at: "{{ now }}"
+ updated_at: "{{ now }}"
+```
+## The Bun ORM in Action
+
+First things first, we need to get input from the user. Let’s assume the user runs a command like:
+
+ `go run internal/cmd/fixtures/main.go` 
+
+Then we want to accept some arguments along with this command to determine what exactly the user is trying to do, we will get into what each flag does later, for now let's go forward
+
+```go
+var (
+ fixturePath = flag.String("fixture", "fixtures/development/complete.yml", "Path to fixture file")
+ recreate = flag.Bool("recreate", false, "Recreate tables before loading fixtures")
+ truncate = flag.Bool("truncate", false, "Truncate tables before loading fixtures")
+)
+
+flag.Parse()
+```
+
+Now that we know what the user is actually trying to do, let’s create a Bun DSN URL which stands for **Data Source Name URL**, which is a connection string used to configure and connect to databases or services.
+
+Here’s a raw example of what a Postgres DSN URL looks like: `postgres://username:password@localhost:5432/database_name?sslmode=disable` 
+
+Since we don’t want to hardcode credentials, we need to load our secrets like passwords and other configs from environment variables. Here’s how we can do that in Go:
+
+```go
+err := godotenv.Load()
+if err != nil {
+ log.Fatal("Error loading .env file")
+}
+
+host := os.Getenv("HOST_NAME")
+port := os.Getenv("DB_PORT")
+username := os.Getenv("USERNAME")
+password := os.Getenv("PASSWORD")
+dbName := os.Getenv("DB_NAME")
+sslMode := os.Getenv("SSL_MODE")
+
+if sslMode == "" {
+ sslMode = "disable"
+}
+
+dsn := fmt.Sprintf(
+ "postgres://%s:%s@%s:%s/%s?sslmode=%s",
+ username, password, host, port, dbName, sslMode,
+)
+```
+
+Once we have our DSN ready, we can check if our connection string is properly formatted and can be parsed without errors. The function we use for this is [`pgx.ParseConfig`](https://pkg.go.dev/github.com/jackc/pgx/v5#ParseConfig):
+
+```go
+config, err := pgx.ParseConfig(dsn)
+if err != nil {
+ log.Fatalf("Failed to parse database config: %v", err)
+}
+```
+
+Now that we are ready to go, let's connect to our database and close the connection to database as our program ends
+
+```go
+sqldb := stdlib.OpenDB(*config)
+defer sqldb.Close()
+db := bun.NewDB(sqldb, pgdialect.New())
+```
+
+Now we need to load all our fixtures from the YAML files in our `fixtures` folder. Here’s a simple flowchart that shows how the loading process works, [Read The Code](https://github.com/raghavyuva/nixopus/blob/master/api/internal/fixtures/loader/fixture_loader.go) 
+
+
+
+![Fixture Loader](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/i4uwnfs354mdhkdv2a9j.png)
+
+
+
+After we have everything set up, we decide **how we want to load the fixtures onto our database**. This block of code checks which option the user passed when they ran the command and performs the action accordingly:
+
+```go
+if *recreate {
+ err = fixtureLoader.LoadFixturesWithRecreate(ctx, *fixturePath)
+} else if *truncate {
+ err = fixtureLoader.LoadFixturesWithTruncate(ctx, *fixturePath)
+} else {
+ err = fixtureLoader.LoadFixtures(ctx, *fixturePath)
+}
+```
+
+### Explanation of the Flags We Considered Earlier
+
+I know you must be waiting for the final touch, it's a lot of code to digest, right? So let’s take a moment to clearly understand the arguments we took earlier from the user:
+- If you used `--recreate`, it **drops all the tables**, recreates them, and then loads your fixtures into fresh tables. This is helpful if you want to start from scratch every time.
+- If you used `--truncate`, it **empties all rows** but keeps the tables themselves (the structure stays intact), then loads your fixtures.
+- If you didn’t pass any of those flags, it simply **inserts the fixture data as-is**, without dropping or truncating anything.
+
+## The Conclusion
+
+Do you think this could be done even better? Hmm that’s exactly why we’d love to have you join our [Discord community](https://discord.gg/skdcq39Wpv)! Want to see what we’re building and what we’ve accomplished so far? Take a look at our [CHANGELOG.md](https://github.com/raghavyuva/nixopus/blob/master/CHANGELOG.md). 
+
+Come help us shape the future of [Nixopus a next-gen ServerOps management platform](https://github.com/raghavyuva/nixopus).
+
+Happy Coding!

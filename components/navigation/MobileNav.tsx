@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
-import { OhMyScript } from '@/components/OhMyScript';
+import { SiteBrand } from '@/components/SiteBrand';
 
 interface NavItem {
   name: string;
@@ -102,7 +102,7 @@ export function MobileNav({ items, socialLinks }: MobileNavProps) {
               }}
               onClick={() => setIsOpen(false)}
             >
-              <OhMyScript />
+              <SiteBrand />
             </Link>
             <button
               onClick={() => setIsOpen(false)}

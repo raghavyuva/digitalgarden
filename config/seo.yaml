@@ -1,45 +1,42 @@
 # Site-wide SEO configuration
 # Update these values to change global metadata without touching code.
 
-siteUrl: "https://ohmyscript.com"
+siteUrl: "https://raghavyuva.in"
 
 # Default <title> and template for pages
 # If titleTemplate is omitted, it falls back to "%s | <title>"
 
-title: "OhMyScript"
+title: "raghavyuva"
 
-titleTemplate: "%s | OhMyScript"
+titleTemplate: "%s | raghavyuva"
 
 # Default description used across the site
 
-description: "Tinkerer, FOSS enthusiast, systems engineer, polymathic indie computer scientist, and data-science aficionado. Explore my projects, read my writing, and connect with me to collaborate on interesting challenges."
+description: "Raghavendra Bhat (raghavyuva) — Senior AI Engineer, Vibe Engineer, and open-source builder. Creator of Nixopus (1300+ stars, open-source VPS management) and LucaMail. Building self-hosted infrastructure tools with Go, Next.js, and Docker."
 
 # Keywords for SEO (optional)
 keywords:
-  - "open source"
-  - "foss"
-  - "free and open source software"
-  - "free software"
-  - "open source software"
-  - "open source projects"
-  - "open source contributions"
-  - "open source community"
-  - "open source development"
-  - "open source projects"
-  - "software engineering"
-  - "systems engineering"
-  - "backend development"
-  - "distributed systems"
+  - "raghavyuva"
+  - "Raghavendra Bhat"
+  - "nixopus"
+  - "open source vps management"
+  - "self-hosted deployment"
+  - "devops"
   - "developer tools"
-  - "data science"
-  - "AI engineering"
-  - "platform engineering"
-  - "indie development"
+  - "full stack development"
+  - "go"
+  - "next.js"
+  - "docker"
+  - "caddy"
+  - "LucaMail"
+  - "infrastructure automation"
+  - "open source"
+  - "self-hosted"
 
 # Author information
 author:
-  name: "Shravan Kumar B"
-  url: "https://ohmyscript.com"
+  name: "Raghavendra Bhat"
+  url: "https://raghavyuva.in"
 
 # PWA Theme Colors (optional)
 # themeColor: "#000000"  # Theme color for browser UI
@@ -47,18 +44,16 @@ author:
 
 openGraph:
   type: "website"
-  # Optional: path to a default OG image. Provide an absolute URL or a path under public/
-  image: "/images/og/zhravan.png"
+  image: "/images/og/raghavyuva.png"
   locale: "en_US"
 
 twitter:
   card: "summary_large_image"
-  site: "@zhravan"
-  creator: "@zhravan"
+  site: "@raghavyuva"
+  creator: "@raghavyuva"
 
 # Social media links
 social:
-  github: "https://github.com/zhravan"
-  gitlab: "https://gitlab.com/zhravan"
-  twitter: "https://x.com/zhravan"
-  linkedin: "https://linkedin.com/in/zhravan"
+  github: "https://github.com/raghavyuva"
+  twitter: "https://x.com/raghavyuva"
+  linkedin: "https://linkedin.com/in/raghavyuva"

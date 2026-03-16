@@ -1,7 +1,7 @@
 {
-  "name": "OhMyScript - Shravan Kumar B",
-  "short_name": "OhMyScript",
-  "description": "tinkerer, polymathic indie computer scientist, systems engineer, and data-science aficionado.",
+  "name": "raghavyuva - Raghavendra Bhat",
+  "short_name": "raghavyuva",
+  "description": "Raghavendra Bhat (raghavyuva) — Senior AI Engineer, Vibe Engineer, and open-source builder. Creator of Nixopus and LucaMail. Infrastructure, AI, and product engineering.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -10,24 +10,13 @@
   "scope": "/",
   "icons": [
     {
-      "src": "/assets/ohmyscript.png",
-      "sizes": "512x512",
-      "type": "image/png",
+      "src": "/images/raghavyuva-avatar.jpg",
+      "sizes": "460x460",
+      "type": "image/jpeg",
       "purpose": "any maskable"
-    },
-    {
-      "src": "/images/og/zhravan.png",
-      "sizes": "1200x630",
-      "type": "image/png",
-      "purpose": "any"
     }
   ],
-  "categories": ["blog", "portfolio", "education", "foss", "open source", "oss"],
+  "categories": ["blog", "portfolio", "open source", "devops", "developer tools"],
   "lang": "en-US",
   "dir": "ltr"
 }
-
-
-
-
-

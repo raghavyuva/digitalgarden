@@ -8,7 +8,7 @@ import type { Metadata } from 'next';
 
 const pageMetadata = {
   title: 'Writing',
-  description: 'Sometimes write blogs, personal musings, and use space as a second brain'
+  description: 'Technical writing on infrastructure, DevOps, open-source engineering, and building products with Go and Next.js.'
 };
 
 export const metadata: Metadata = getPageMetadata({

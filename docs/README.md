@@ -2,7 +2,7 @@
 
 ```bash
 git clone <repository-url>
-cd zhravan.dev
+cd digitalgarden
 pnpm install
 pnpm dev
 ```

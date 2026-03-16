@@ -3,13 +3,12 @@
 import { useEffect, useState } from 'react';
 
 const lines = [
-  'I am an engineer',
-  'I am a strategist',
-  'I am a pragmatic product builder',
-  'I break down and solve complex problems',
-  'I help founders & teams to build product 0 to 1.',
-  'I help systems to scale from 10 to 10m',
-  'I am a freelancer',
+  'I build tools developers actually want to use',
+  'I make self-hosting feel like Vercel',
+  'I turn infrastructure into one-click deploys',
+  'I ship open-source that scales to thousands',
+  'I write Go by day, think about clean abstractions at night',
+  'I help teams go from zero to production',
 ];
 
 export function HeroAnimation() {
@@ -52,7 +51,7 @@ export function HeroAnimation() {
       {/* Title */}
       {showCommand && (
         <div className="mb-4">
-          <h2 className="text-sm mb-2">Who am I</h2>
+          <h2 className="text-sm mb-2">What I Believe</h2>
           <div className="h-px w-12" style={{ backgroundColor: 'var(--color-border)' }}></div>
         </div>
       )}

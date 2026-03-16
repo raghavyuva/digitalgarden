@@ -39,3 +39,121 @@ books:
     author: John Ousterhout
     status: to-read
     tags: ["software-engineering", "design"]
+
+  - id: go-programming-language
+    title: The Go Programming Language
+    author: Alan Donovan & Brian Kernighan
+    status: read
+    rating: 5
+    dateFinished: "2024-06-12"
+    review: "The definitive Go book. Thorough, well-structured, and packed with idiomatic patterns. A must-read before writing any serious Go."
+    tags: ["go", "programming"]
+
+  - id: system-design-interview
+    title: "System Design Interview: An Insider's Guide"
+    author: Alex Xu
+    status: read
+    rating: 4
+    dateFinished: "2024-01-20"
+    review: "Practical walkthroughs of real system design problems. Great for building intuition around trade-offs in distributed systems."
+    tags: ["system-design", "architecture", "interviews"]
+
+  - id: docker-deep-dive
+    title: Docker Deep Dive
+    author: Nigel Poulton
+    status: read
+    rating: 4
+    dateFinished: "2024-04-05"
+    review: "Hands-on and clear. Covers everything from container basics to orchestration. Good companion when building infrastructure tooling."
+    tags: ["docker", "devops", "infrastructure"]
+
+  - id: staff-engineer
+    title: "Staff Engineer: Leadership Beyond the Management Track"
+    author: Will Larson
+    status: read
+    rating: 5
+    dateFinished: "2025-02-18"
+    review: "Changed how I think about technical leadership. The archetypes framework is genuinely useful for figuring out where you add the most leverage."
+    tags: ["leadership", "career", "software-engineering"]
+
+  - id: understanding-distributed-systems
+    title: Understanding Distributed Systems
+    author: Roberto Vitillo
+    status: read
+    rating: 4
+    dateFinished: "2024-09-10"
+    review: "Concise and practical intro to distributed systems. Covers consensus, replication, and partitioning without drowning you in theory."
+    tags: ["distributed-systems", "architecture"]
+
+  - id: building-microservices
+    title: Building Microservices
+    author: Sam Newman
+    status: read
+    rating: 4
+    dateFinished: "2023-05-22"
+    review: "Solid overview of microservices patterns and pitfalls. Especially useful for understanding service boundaries and deployment strategies."
+    tags: ["microservices", "architecture", "devops"]
+
+  - id: zero-to-one
+    title: Zero to One
+    author: Peter Thiel
+    status: read
+    rating: 4
+    dateFinished: "2023-12-08"
+    review: "Contrarian thinking about startups and innovation. The idea of going from zero to one rather than one to N reframes how you approach building products."
+    tags: ["startups", "business", "innovation"]
+
+  - id: the-linux-command-line
+    title: The Linux Command Line
+    author: William Shotts
+    status: read
+    rating: 5
+    dateFinished: "2022-08-15"
+    review: "The best intro to Linux and the shell. Fundamentally shaped how I work with servers and think about infrastructure."
+    tags: ["linux", "devops", "infrastructure"]
+
+  - id: ai-engineering
+    title: AI Engineering
+    author: Chip Huyen
+    status: reading
+    dateStarted: "2025-12-01"
+    tags: ["ai", "machine-learning", "engineering"]
+
+  - id: fundamentals-of-software-architecture
+    title: Fundamentals of Software Architecture
+    author: Mark Richards & Neal Ford
+    status: to-read
+    tags: ["architecture", "software-engineering"]
+
+  - id: learning-go
+    title: Learning Go
+    author: Jon Bodner
+    status: read
+    rating: 4
+    dateFinished: "2024-02-28"
+    review: "Practical and idiomatic. Great second Go book after the official one — fills in the gaps around testing, modules, and concurrency patterns."
+    tags: ["go", "programming"]
+
+  - id: the-phoenix-project
+    title: The Phoenix Project
+    author: Gene Kim, Kevin Behr & George Spafford
+    status: read
+    rating: 4
+    dateFinished: "2023-09-14"
+    review: "DevOps principles told through a novel. Makes the case for CI/CD, automation, and flow in a way that sticks with you."
+    tags: ["devops", "management", "software-engineering"]
+
+  - id: deep-work
+    title: Deep Work
+    author: Cal Newport
+    status: read
+    rating: 5
+    dateFinished: "2024-07-30"
+    review: "Deeply influenced how I structure my working days. The argument for focused, distraction-free work is more relevant than ever in the AI era."
+    tags: ["productivity", "focus", "self-improvement"]
+
+  - id: observability-engineering
+    title: Observability Engineering
+    author: Charity Majors, Liz Fong-Jones & George Miranda
+    status: to-read
+    tags: ["observability", "devops", "infrastructure"]

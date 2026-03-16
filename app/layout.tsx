@@ -1,6 +1,6 @@
 import './globals.css';
 import type { Metadata, Viewport } from 'next';
-import { Space_Grotesk } from 'next/font/google';
+import { Outfit } from 'next/font/google';
 import Link from 'next/link';
 import { NavPill, MobileNav } from '@/components/navigation';
 import { ScrollToTop } from '@/components/ScrollToTop';
@@ -24,10 +24,10 @@ import { getNavigationContentTypes } from '@/lib/content-types';
 import { filterDrafts } from '@/lib/plugins/drafts';
 import { LinkTracker } from '@/components/LinkTracker';
 import { SearchAnalytics } from '@/components/SearchAnalytics';
-import { OhMyScript } from '@/components/OhMyScript';
+import { SiteBrand } from '@/components/SiteBrand';
 import { SubscribeWidget } from '@/components/SubscribeWidget';
 
-const spaceGrotesk = Space_Grotesk({ subsets: ['latin'] });
+const outfit = Outfit({ subsets: ['latin'] });
 
 export const metadata: Metadata = getDefaultMetadata();
 export const viewport: Viewport = getDefaultViewport();
@@ -109,7 +109,7 @@ export default function RootLayout({
   const socialLinks = getSocialLinks();
 
   return (
-    <html lang="en" className={spaceGrotesk.className}>
+    <html lang="en" className={outfit.className}>
       <head>
         <ThemeStyleTag />
         <StructuredData data={[websiteStructuredData, personStructuredData]} />
@@ -144,7 +144,7 @@ export default function RootLayout({
                           paddingBottom: 0
                         }}
                       >
-                        <OhMyScript />
+                        <SiteBrand />
                       </Link>
                     </div>
                     <div className="flex flex-wrap items-center gap-4 sm:gap-5">
@@ -168,7 +168,7 @@ export default function RootLayout({
                           paddingBottom: 0
                         }}
                       >
-                        <OhMyScript />
+                        <SiteBrand />
                       </Link>
                     </div>
                     <div className="flex items-center justify-start">
@@ -179,12 +179,12 @@ export default function RootLayout({
               </nav>
             </header>
             <main className="max-w-2xl mx-auto px-4 sm:px-8 pt-12 pb-8 sm:pt-16 sm:pb-16">{children}</main>
-            <SubscribeWidget />
+            {/* <SubscribeWidget /> */}
             <footer className="mt-12 md:mt-24 pb-8">
               <div className="max-w-2xl mx-auto px-4 sm:px-8 py-6 sm:py-8">
                 <div className="flex flex-col items-center gap-4">
                   <p className="text-xs" style={{ color: 'var(--color-muted-foreground)', fontSize: '0.65rem' }}>
-                    © 2019 • OhMyScript
+                    © 2024 • raghavyuva
                   </p>
                   <div className="flex items-center gap-4">
                     {socialLinks.github && (

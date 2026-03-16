@@ -8,7 +8,7 @@ export const size = {
 };
 export const contentType = 'image/png';
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const allPosts = getAllPosts(false);
   return allPosts.map((post) => ({
     slug: post.slug,
@@ -77,7 +77,7 @@ export default async function Image({ params }: { params: Promise<{ slug: string
                 fontWeight: '500',
               }}
             >
-              ohmyscript.com
+              raghavyuva.in
             </span>
           </div>
           <span

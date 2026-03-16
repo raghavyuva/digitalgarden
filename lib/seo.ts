@@ -78,8 +78,8 @@ export function loadSeoConfig(): YamlSEOConfig {
   if (!fs.existsSync(seoConfigPath)) {
     // Provide sensible defaults if file doesn't exist
     cached = {
-      siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://ohmyscript.com",
-      title: "OhMyScript",
+      siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://raghavyuva.in",
+      title: "raghavyuva",
       description: "Engineer, writer, and creator.",
     };
     return cached;
@@ -91,7 +91,7 @@ export function loadSeoConfig(): YamlSEOConfig {
   const siteUrl = (
     data?.siteUrl ||
     process.env.NEXT_PUBLIC_SITE_URL ||
-    "https://ohmyscript.com"
+    "https://raghavyuva.in"
   ).replace(/\/$/, "");
 
   cached = {
@@ -187,10 +187,10 @@ export function getDefaultMetadata(): Metadata {
     manifest: "/manifest.json",
     icons: {
       icon: [
-        { url: "/assets/ohmyscript.png", sizes: "512x512", type: "image/png" },
+        { url: "/assets/raghavyuva.png", sizes: "512x512", type: "image/png" },
       ],
       apple: [
-        { url: "/assets/ohmyscript.png", sizes: "512x512", type: "image/png" },
+        { url: "/assets/raghavyuva.png", sizes: "512x512", type: "image/png" },
       ],
     },
     appleWebApp: {
@@ -336,13 +336,71 @@ export function getPostMetadata({
 
 export function getPersonStructuredData(): StructuredData {
   const cfg = loadSeoConfig();
+  const social = cfg.social || {};
+
+  const sameAs = [
+    social.github,
+    social.twitter,
+    social.linkedin,
+    "https://dev.to/raghavyuva",
+    "https://www.youtube.com/@nixopus",
+    "https://nixopus.com",
+    "https://lomiri.com",
+    "https://os-sci.com",
+  ].filter(Boolean);
 
   return {
     "@context": "https://schema.org",
     "@type": "Person",
     name: cfg.author?.name || cfg.title,
+    alternateName: "raghavyuva",
     url: cfg.siteUrl,
-    sameAs: cfg.author?.url ? [cfg.author.url] : undefined,
+    image: `${cfg.siteUrl}/images/raghavyuva-avatar.jpg`,
+    jobTitle: "Senior AI Engineer",
+    description:
+      "Senior AI Engineer and Vibe Engineer. Open-source builder and Linux systems specialist. Creator of Nixopus (1300+ stars) and LucaMail. Contributor to Lomiri (convergent GNU/Linux desktop). Works with OS-SCi on FOSS education. Deep expertise in containerization, virtualization, Debian packaging, and AI-native product engineering.",
+    knowsAbout: [
+      "Rust",
+      "Go",
+      "TypeScript",
+      "Python",
+      "Next.js",
+      "React",
+      "Tailwind CSS",
+      "Framer Motion",
+      "Tauri",
+      "Electron",
+      "tRPC",
+      "Prisma",
+      "Zod",
+      "WebSockets",
+      "Docker",
+      "LXC/LXD",
+      "Podman",
+      "KVM/QEMU",
+      "Terraform",
+      "Ansible",
+      "Caddy",
+      "Nginx",
+      "Traefik",
+      "AWS",
+      "Supabase",
+      "PostgreSQL",
+      "MySQL",
+      "Redis",
+      "DevOps",
+      "Linux Systems",
+      "Debian Packaging",
+      "Virtualization",
+      "Containerization",
+      "Self-hosted Infrastructure",
+      "VPS Management",
+      "AI Engineering",
+      "LLM Integration",
+      "Open Source",
+      "Lomiri",
+    ],
+    sameAs,
   };
 }
 

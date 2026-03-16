@@ -1,15 +1,15 @@
 <samp>
 
 <p align="center">
-  <h1 align="center">OhMyScript</h1>
+  <h1 align="center">raghavyuva</h1>
 </p>
 
 <p align="center">
-  <a href="https://ohmyscript.com"><img src="app/favicon.ico" alt="OhMyScript"  align="center" width="25%" /></a>
+  <a href="https://raghavyuva.in"><img src="app/favicon.ico" alt="raghavyuva"  align="center" width="25%" /></a>
 </p>
 
 <p align="center">
-Personal portfolio and digital garden of Shravan Kumar B; a tinkerer, FOSS enthusiast, polymathic indie computer scientist.
+Personal portfolio and digital garden of Raghavendra Bhat — full-stack developer, open-source enthusiast, creator of Nixopus.
 </p>
 
 ## Quick Start
@@ -29,18 +29,18 @@ Visit <http://localhost:3000>
 
 ## Connect
 
-- Website: [ohmyscript.com](https://ohmyscript.com)
-- Twitter: [@zhravan](https://x.com/zhravan)
-- LinkedIn: [zhravan](https://linkedin.com/in/zhravan)
-- GitHub: [@zhravan](https://github.com/zhravan)
-- Email: [hi [at] ohmyscript [dot] com](mailto:hi@ohmyscript.com)
+- Website: [raghavyuva.in](https://raghavyuva.in)
+- Twitter: [@raghavyuva](https://x.com/raghavyuva)
+- LinkedIn: [raghavyuva](https://linkedin.com/in/raghavyuva)
+- GitHub: [@raghavyuva](https://github.com/raghavyuva)
+- Email: [raghav [at] nixopus [dot] com](mailto:raghav@nixopus.com)
 
 ## License
 
-MIT © Shravan Kumar B
+MIT © Raghavendra Bhat
 
 ---
 
-Built with Next.js, React, and MDX. Inspired by [leerob.com](https://leerob.com/) and the indie web movement.
+Built with Next.js, React, and MDX. Forked from [zhravan/zhravan.dev](https://github.com/zhravan/zhravan.dev).
 
 </samp>

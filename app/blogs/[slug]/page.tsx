@@ -28,8 +28,8 @@ import { Suspense } from 'react';
 import { getBreadcrumbStructuredData } from '@/lib/breadcrumbs';
 import { AnalyticsTracker } from '@/components/AnalyticsTracker';
 
-export async function generateStaticParams() {
-  const allPosts = getAllPosts(true); // Include drafts for static generation
+export function generateStaticParams() {
+  const allPosts = getAllPosts(true);
   return allPosts.map((post) => ({
     slug: post.slug
   }));

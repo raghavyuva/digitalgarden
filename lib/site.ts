@@ -1,10 +1,10 @@
 import type { ThemeName } from "./themes";
 
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://ohmyscript.com";
-export const SITE_TITLE = "OhMyScript";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://raghavyuva.in";
+export const SITE_TITLE = "raghavyuva";
 export const SITE_DESCRIPTION =
-  "tinkerer, polymathic indie computer scientist, systems engineer, data-science aficionado, i write at times.";
+  "Raghavendra Bhat (raghavyuva) — Senior AI Engineer, Vibe Engineer, and open-source builder. Creator of Nixopus and LucaMail. Self-hosted infrastructure, Go, Next.js, Docker.";
 
 /**
  * Theme Configuration
@@ -173,4 +173,4 @@ export const SITE_DESCRIPTION =
  * - 'honey-glow'             - Golden honey cream with warm amber
  * - 'tropical-paradise'      - Turquoise white with tropical energy
  */
-export const ACTIVE_THEME: ThemeName = "northern-lights";
+export const ACTIVE_THEME: ThemeName = "graphite-pro";

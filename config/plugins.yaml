@@ -18,12 +18,11 @@ plugins:
 
   # Giscus Comments - Blog comments integration
   giscus:
-    enabled: true
-    repo: "zhravan/zhravan.dev"
-    # Real GitHub GraphQL IDs from giscus.app
-    repoId: "R_kgDOQhK53A"
+    enabled: false
+    repo: "raghavyuva/digitalgarden"
+    repoId: ""
     category: "General"
-    categoryId: "DIC_kwDOQhK53M4Cz6_n"
+    categoryId: ""
     # Optional settings
     mapping: "url" # pathname | url | title | og:title
     reactionsEnabled: true # true | false

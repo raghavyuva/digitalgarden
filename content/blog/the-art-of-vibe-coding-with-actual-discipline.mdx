@@ -1,0 +1,94 @@
+---
+title: "The Art of Vibe Coding With Actual Discipline"
+date: "2025-12-08"
+description: "Why speed feels great but structure keeps you sane — balancing AI-assisted development with solid engineering practices."
+tags:
+  - "ai"
+  - "programming"
+  - "webdev"
+  - "productivity"
+---
+
+### Why speed feels great but structure keeps you sane
+
+Every day I see developers firing off prompts to tools like Cursor, Claude Code, and every other AI Powered editor out there. The speed is addictive. You get instant wins, quick fixes, and a sense that you're moving faster than ever. But what this really means is you're building on shaky ground. It works today, then bites you later.
+
+I want to break down how I use AI in my workflow while building [Nixopus](https://github.com/raghavyuva/nixopus), how I wish my teammates approached it, and why keeping core engineering practices intact still matters. Before we get into the solutions, it helps to understand where things start going wrong.
+
+### Where vibe coding quietly derails (so as you!)
+
+![Vibe Coding Pitfalls](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/y0u3zdpotpj0fh1ckvel.png)
+
+1. Vibe coding can make you feel like a 10x engineer, even when you're not actually steering the ship. 
+2. After enough prompts, you lose track of what changed and why. Suddenly you need someone else to explain your own code. 
+3. Edits become scattered, inconsistent, and sometimes downright chaotic. I've seen people commit things like `SUMMARY.md` right into their main codebase. 
+4. Collaboration becomes a mess because no one shares the same mental model of the project anymore. 
+5. Pair programming takes a hit since everyone is locked into their own AI driven bubble. 
+6. Knowledge transfer becomes painful. New teammates end up re prompting the model just to understand what's going on. 
+7. The team's engineering culture starts drifting away from solid, intentional practices. 
+8. Running multiple [agentic workflows](https://www.ibm.com/think/topics/agentic-workflows) across different repos introduces confusion instead of clarity. 
+9. And at the end of the day, you're reduced to someone who just gives orders to an AI and hopes it does the right thing.
+
+Now that you can probably relate to at least a few of the pain points above, this is where things get interesting. Let's look at how we can take all that chaos, turn it around, and make vibe coding actually work without sacrificing engineering discipline.
+
+### Turning raw prompts into intentional, consistent workflows
+
+![Prompting Workflow](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/9rbx26hwsl3lj2wciqh6.png)
+
+Prompting isn't just a skill anymore. It's becoming a core part of how we write software with LLMs. The better your prompts, the better your outcomes. And when you treat prompting like an engineering practice rather than a shortcut, you start seeing consistent, predictable results.
+
+Here's how to approach it.
+
+1. **Ask for step by step output** : Break your instructions into clear, sequential steps. It gives the model structure and reduces randomness.
+2. **Tell the model when to stop** : If you want to review something, specify that the model should pause once a certain part is done. It keeps you in control of the flow.
+3. **Interrupt when things drift** : If the model starts hallucinating or going off track, stop it immediately and re prompt with a tighter instruction.
+4. **Reinforce project rules every time** : Mention coding conventions, folder structure, architectural rules, or any non negotiables in your prompt so the model prioritizes them.
+5. **Keep a reusable prompt structure** : Build templates for feature development, bug fixes, refactoring, testing, and documentation. 
+ If you're using [Cursor](https://cursor.com), keep them inside your `.cursor` folder for quick access. 
+ The same structure can be shared with your team so everyone works with the same clarity.
+
+### Review like an engineer, not an AI operator
+
+![Engineering Review](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/z87r8x80gzavby4ymdep.png)
+
+Writing code with an LLM doesn't end when the editor stops typing. The real work begins at review. Own what you push, catch problems early, and use models as tools not replacements.
+
+1. **Take responsibility** 
+ You asked the model to write this. When a pull request fills up with comments, don't panic. Lead the review, reply to feedback, and fix issues before they hit `main`. Ownership keeps the team confident and the codebase healthy.
+2. **Self review first** 
+ Don't blindly trust the model. Run the code, step through logic, and search for bugs. Remove stray emojis, clean up variable names, and format things the way you would if you wrote it yourself. You are the engineer, the model is the assistant.
+3. **Agentic review as a second pass** 
+ Use an automated reviewer or another model to scan for style, edge cases, or security issues. This is not a replacement for human judgment, treat it as a high quality linter that finds what you might miss.
+4. **Fix small issues immediately** 
+ Address minor comments and nits as they appear. Small problems compound quickly. Fixing them now prevents larger rework later and keeps the review cycle fast.
+5. **Think big while shipping small** 
+ Ship simple, useful changes. But keep an eye on scale. Ask: will this pattern hold at 10x users, or 10x contributors? Balance pragmatic simplicity with design that scales.
+
+### Let automation enforce what your team can't afford to forget
+
+![Automation/CI/CD](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/e4vvsolc51lez12qeq0u.png)
+
+Your CI CD pipeline is the backbone of everything you ship. It starts as early as your pre-commit and pre-push hooks, and it follows your code all the way to production. A strong pipeline enforces discipline even when vibe coding tries to pull you in every direction.
+
+Make sure your pipeline covers the essentials:
+
+- Coding standards 
+- Linters and formatters 
+- Compilation and type checks 
+- Commit message rules 
+- Mandatory reviews with enough depth 
+- Extra review cycles when the change is risky 
+
+A [solid pipeline](https://graphite.com/guides/in-depth-guide-ci-cd-best-practices) catches what you miss, keeps your team aligned, and makes sure every feature lands clean.
+
+### Care about the process, not just the output
+
+![Engineering Process](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/fp6uy0o2z3uoabmghdc8.png)
+
+Open source works because people care. They care about the community, the standards, the craft, and the long term health of the project. Small teams that vibe code without shared principles slowly drift into sloppy engineering because the only thing they focus on is the outcome, not how they got there.
+
+If you're someone who believes process matters, who values clean change history, who refuses to push a feature wrapped in a hundred hidden bugs, then this mindset becomes non negotiable. Respect the craft. Respect the principles. And don't forget the tactics that keep your workflow sharp.
+
+What you ship is important. How you ship it matters even more.
+
+Follow these steps and vibe coding stops being chaotic. It becomes a fast, accountable way to build without sacrificing engineering craft. These approaches are my way of balancing the things, if you are someone with whom it resonates then feel free to [follow me](https://github.com/raghavyuva) for more such resonating effects! 

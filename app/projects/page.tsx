@@ -64,13 +64,17 @@ export default function Projects() {
         ))}
       </div>
 
-      <section className="pt-4">
+      <section className="pt-4 space-y-2">
         <p style={{ color: 'var(--color-muted-foreground)' }}>
-          You can find more of my experiments and tools on{' '}
-          <a href="https://github.com/zhravan" target="_blank" rel="noopener noreferrer">
+          These are my public projects. I also work on several private and client projects
+          across infrastructure, AI tooling, and full-stack applications that are not listed here.
+        </p>
+        <p style={{ color: 'var(--color-muted-foreground)' }}>
+          Interested in what else I am building?{' '}
+          <a href="mailto:raghav@nixopus.com">Get in touch</a> or find more on{' '}
+          <a href="https://github.com/raghavyuva" target="_blank" rel="noopener noreferrer">
             GitHub
-          </a>
-          .
+          </a>.
         </p>
       </section>
     </div>

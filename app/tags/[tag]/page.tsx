@@ -10,8 +10,11 @@ interface PageProps {
   params: Promise<{ tag: string }>;
 }
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   const allTags = getAllTags();
+  if (allTags.length === 0) {
+    return [{ tag: '_placeholder' }];
+  }
   return allTags.map((tag) => ({
     tag: tag
       .toLowerCase()
